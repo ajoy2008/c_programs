@@ -1,0 +1,1 @@
+http://www.infototechno.net/2012/06/simple-programs-to-print-star-pattern.html
