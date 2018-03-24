@@ -1,4 +1,5 @@
 #include <stdio.h>
+/* compilation command : gcc -o swap.exe 01_swap_basic.c */
 int main(void)
 {
     int a = 10, b = 20 ;
