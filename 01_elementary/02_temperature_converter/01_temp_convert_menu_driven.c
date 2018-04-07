@@ -47,4 +47,6 @@ int main(void)
                 exit(EXIT_FAILURE);
         }
     } while(choice) ;
+
+    return 0 ;
 }
