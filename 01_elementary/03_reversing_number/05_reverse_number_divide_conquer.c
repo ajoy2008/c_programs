@@ -1,8 +1,21 @@
 /*
-   rev(1234)
-   rev(12) rev(34) ==> 3412
-   rev(1) rev(2)==> 21, rev(3) rev(4) ==> 43
-                                            ==> 4321
+                      rev(1234)
+                       /   \
+                 rev(12)    rev(34)       <-- Divide into sub problems
+                 / \            / \
+             rev(1) rev(2)  rev(3) rev(4) <-- Divide into sub problems
+               |     |        |     |
+               1     2        3     4     <-- No more division possible
+                \   /          \   /
+                 \ /            \ /
+                  21             43       <-- Start conquering solution from subproblems
+                    \           /
+                     \         /
+                      \       /
+                       \     /
+                        \   /
+                         4321             <-- Get the final solution from conquering the subproblems result
+
 */
 
 #include<stdio.h>
@@ -13,8 +26,7 @@ int reverse(int n, int d){
     int first,last,di,dj;
     if(n<10) {
         return n;
-    }
-    else {
+    } else {
         di    = (int)pow(10, d-d/2);
         first = reverse(n/di, d/2);
         last  = reverse(n - (n/di)*di, d-d/2);
@@ -32,12 +44,10 @@ int main(void)
     printf("0 : Program Exit\n");
     printf("1 : Reverse Number\n");
 
-    do
-    {
+    do {
         printf("\nYour Choice : ");
         scanf("%d",&choice);
-        switch(choice)
-        {
+        switch(choice) {
             case 0 :
                 printf("\nProgram Exited!\n");
                 break ;
